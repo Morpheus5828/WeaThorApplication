@@ -7,11 +7,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class Controller {
+    public static String city;
     @FXML private Button search;
     @FXML private TextField cityName;
 
 
-    public void search(ActionEvent actionEvent) {
-        System.out.println(cityName.getText());
+    public void sendCityName(ActionEvent actionEvent) {
+        city = cityName.getText();
     }
+
 }

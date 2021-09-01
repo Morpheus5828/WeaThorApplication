@@ -7,8 +7,8 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="597.0" prefWidth="508.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.morpheus.weathorapplication.controller.Controller">
    <children>
-      <Button fx:id="search" layoutX="373.0" layoutY="140.0" mnemonicParsing="false" onAction="#declenchement" text="SEARCH" />
-      <TextField fx:id="cityName" layoutX="193.0" layoutY="140.0" />
-      <Label layoutX="61.0" layoutY="140.0" prefHeight="24.0" prefWidth="101.0" text="Enter location " />
+      <Button fx:id="search" layoutX="344.0" layoutY="54.0" mnemonicParsing="false" onAction="#sendCityName" text="SEARCH" />
+      <TextField fx:id="cityName" layoutX="150.0" layoutY="54.0" />
+      <Label layoutX="35.0" layoutY="54.0" prefHeight="24.0" prefWidth="101.0" text="Enter location " />
    </children>
 </Pane>
