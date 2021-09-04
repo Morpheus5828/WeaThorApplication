@@ -1,6 +1,5 @@
 package fr.morpheus.weathorapplication;
 
-import fr.morpheus.weathorapplication.modele.Modele;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -16,7 +15,7 @@ public class WeaThor extends Application {
         stage.setTitle("WeaThor");
         stage.setScene(scene);
         stage.show();
-        Modele modele = new Modele();
+
 
     }
 
