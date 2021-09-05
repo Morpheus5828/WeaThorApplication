@@ -1,9 +1,11 @@
 package fr.morpheus.weathorapplication.modele;
 
+import fr.morpheus.weathorapplication.controller.Controller;
+
 public class DataConversion {
-    private double temp;
-    private double tempMax;
-    private double tempMin;
+    private double temperature;
+    private double temperature_Max;
+    private double temperature_Min;
     private double pressure;
     private double humidity;
     private double speed;
@@ -16,24 +18,21 @@ public class DataConversion {
             double  humidity,
             double  speed
     ) {
-
-        this.temp = ((double) temp) - 273.15;
-        this.tempMax = ((double) tempMax) - 273.15;
-        this.tempMin = ((double) tempMin) - 273.15;
+        this.temperature = ((double) temp) - 273.15;
+        this.temperature_Max = ((double) tempMax) - 273.15;
+        this.temperature_Min = ((double) tempMin) - 273.15;
         this.pressure = pressure;
         this.humidity = humidity;
         this.speed = speed;
-    }
 
-    @Override
-    public String toString() {
-        return "DataConversion{" +
-                "temp=" + temp +
-                ", tempMax=" + tempMax +
-                ", tempMin=" + tempMin +
-                ", pressure=" + pressure +
-                ", humidity=" + humidity +
-                ", speed=" + speed +
-                '}';
+        Controller test = new Controller();
+        test.sendData(
+                this.temperature,
+                this.temperature_Max,
+                this.temperature_Min,
+                this.pressure,
+                this.humidity,
+                this.speed
+        );
     }
 }

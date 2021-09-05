@@ -10,5 +10,6 @@
       <Button fx:id="search" layoutX="344.0" layoutY="54.0" mnemonicParsing="false" onAction="#sendCityName" text="SEARCH" />
       <TextField fx:id="cityName" layoutX="150.0" layoutY="54.0" />
       <Label layoutX="35.0" layoutY="54.0" prefHeight="24.0" prefWidth="101.0" text="Enter location " />
+      <Label fx:id="tempLabel" layoutX="77.0" layoutY="179.0" prefHeight="41.0" prefWidth="90.0" />
    </children>
 </Pane>

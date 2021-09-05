@@ -40,7 +40,6 @@ public class DataExtraction {
                 (double) this.humidity,
                 (double) this.speed);
 
-        System.out.println(conversion.toString());
     }
 }
 
