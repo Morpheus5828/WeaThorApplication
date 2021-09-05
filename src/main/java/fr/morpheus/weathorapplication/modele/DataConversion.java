@@ -2,6 +2,8 @@ package fr.morpheus.weathorapplication.modele;
 
 import fr.morpheus.weathorapplication.controller.Controller;
 
+import java.text.DecimalFormat;
+
 public class DataConversion {
     private double temperature;
     private double temperature_Max;
@@ -9,6 +11,7 @@ public class DataConversion {
     private double pressure;
     private double humidity;
     private double speed;
+    //private DecimalFormat f;
 
     public DataConversion(
             double temp,
@@ -18,7 +21,8 @@ public class DataConversion {
             double  humidity,
             double  speed
     ) {
-        this.temperature = ((double) temp) - 273.15;
+        //f.setMaximumFractionDigits(2);
+        this.temperature = (double) temp - 273.15;
         this.temperature_Max = ((double) tempMax) - 273.15;
         this.temperature_Min = ((double) tempMin) - 273.15;
         this.pressure = pressure;
