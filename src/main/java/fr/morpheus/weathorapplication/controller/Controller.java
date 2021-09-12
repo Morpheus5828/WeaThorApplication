@@ -1,7 +1,7 @@
 package fr.morpheus.weathorapplication.controller;
 
 import fr.morpheus.weathorapplication.model.DataRequest;
-import fr.morpheus.weathorapplication.view.view.windDirection.WindDirection;
+import fr.morpheus.weathorapplication.view.skyDesription.WindDirection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Group;

@@ -1,4 +1,4 @@
-package fr.morpheus.weathorapplication.view.view.windSeasonDisplay;
+package fr.morpheus.weathorapplication.view.windSeasonDisplay;
 
 public class AutomnWeatherDisplay {
     private double pressure;
