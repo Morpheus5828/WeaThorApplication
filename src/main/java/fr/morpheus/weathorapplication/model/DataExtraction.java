@@ -1,4 +1,4 @@
-package fr.morpheus.weathorapplication.modele;
+package fr.morpheus.weathorapplication.model;
 
 import com.google.gson.Gson;
 
@@ -11,6 +11,7 @@ public class DataExtraction {
     private Object pressure;
     private Object humidity;
     private Object speed;
+    private Object degree;
     private Gson gson;
 
     public DataExtraction(String responseBody) {
@@ -30,7 +31,9 @@ public class DataExtraction {
         this.tempMin = mainMap.get("temp_min");
         this.pressure  = mainMap.get("pressure");
         this.humidity = mainMap.get("humidity");
+
         this.speed = windMap.get("speed");
+        this.degree = windMap.get("deg");
 
         DataConversion conversion = new DataConversion(
                 (double) this.temp,
@@ -38,8 +41,9 @@ public class DataExtraction {
                 (double) this.tempMin,
                 (double) this.pressure,
                 (double) this.humidity,
-                (double) this.speed);
-
+                (double) this.speed,
+                (double) this.degree
+        );
     }
 }
 

@@ -1,4 +1,4 @@
-package fr.morpheus.weathorapplication.modele;
+package fr.morpheus.weathorapplication.model;
 
 import java.io.IOException;
 import java.net.URI;

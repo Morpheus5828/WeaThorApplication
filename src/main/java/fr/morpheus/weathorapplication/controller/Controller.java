@@ -1,6 +1,7 @@
 package fr.morpheus.weathorapplication.controller;
 
-import fr.morpheus.weathorapplication.modele.DataRequest;
+import fr.morpheus.weathorapplication.model.DataRequest;
+import fr.morpheus.weathorapplication.view.view.windDirection.WindDirection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
@@ -20,19 +21,23 @@ public class Controller {
 
 
     public void sendCityName(ActionEvent actionEvent) throws IOException {
-        DataRequest modele = new DataRequest(cityName.getText());
+        DataRequest model = new DataRequest(cityName.getText());
     }
 
 
     public void sendData (
-            double temp,
+            double  temp,
             double  tempMax,
             double  tempMin,
             double  pressure,
             double  humidity,
-            double  speed
+            double  speed,
+            double degree
     )
     {
+        WindDirection test = new WindDirection();
+        System.out.println(test.conversion(degree, pressure));
+
         Group root = new Group();
         Scene scene = new Scene(root, 500, 500);
         Stage windows = new Stage();
@@ -41,7 +46,7 @@ public class Controller {
                 "Temperature : " + temp + "\n" +
                 "Min : " + tempMin + "Max : " + tempMax + "\n" +
                 "Pressure : " + pressure + "\n" +
-                "Humdity : " + humidity + " %" + "\n" +
+                "Humidity : " + humidity + " %" + "\n" +
                 "The wind speed is " + speed + "km/h"
         );
         textResult.setX(200);
