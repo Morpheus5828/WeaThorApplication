@@ -1,10 +1,10 @@
 package fr.morpheus.weathorapplication.view.skyDesription;
 
-public class SummerSeason {
-    public SummerSeason() {}
+public class SummerDescription {
+    private String skyDescription = "";
+    public SummerDescription() {}
 
-    public String choiceSentences(int value) {
-        String skyDescription = "Nothing";
+    public String getMinimalPressureDescription(byte value) {
 
         switch (value) {
             case 1:
@@ -26,8 +26,26 @@ public class SummerSeason {
             case 5:
                 skyDescription = "A bit rainfall and storm trend" + "\n" +
                                  "Soft and damp";
+                break;
 
         }
         return skyDescription;
     }
+
+    /*public String getFirstPressureDescrption(byte value) {
+        switch(value) {
+            case 1:
+            case 2:
+                skyDescription = "Thunderstorm" + "\n" +
+                                 "Soft temperature";
+                break;
+            case 3:
+                skyDescription = "Heavy rainfall" + "\n" +
+                                 "Dry temperature";
+                break;
+            case 4:
+                skyDescription = "";
+                break;
+        }
+    }*/
 }

@@ -1,41 +1,56 @@
 package fr.morpheus.weathorapplication.view.skyDesription;
 
-import org.w3c.dom.ls.LSOutput;
-
 public class WindDirection {
     private short windDegree;
+    private final int MIN_STEP_PRESSURE_VALUE = 1006;
+    private final int MIDDLE_STEP_PRESSURE_VALUE = 1013;
+    private final int MAX_STEP_PRESSURE_VALUE = 1020;
+    private final byte FIRST_DESCRIPTION = 1;
+    private final byte SECOND_DESCRIPTION = 2;
+    private final byte THIRD_DESCRIPTION = 3;
+    private final byte FOURTH_DESCRIPTION = 4;
+    private final byte FIFTH_DESCRIPTION = 5;
 
     public WindDirection() {}
 
     public String conversion(double windDegree, double pressure) {
         String windDirection = "Error";
-        SummerSeason summerSeason = new SummerSeason();   // entré windDirection en paramètre dans le constructeur
-        if(pressure <= 1020) {
+        SummerDescription summerDescription = new SummerDescription();
+        if(pressure <= MIN_STEP_PRESSURE_VALUE) {
             if(isBetween(windDegree, 345, 50)) {    // Nord
-                windDirection  = summerSeason.choiceSentences(1);
+                windDirection  = summerDescription.getMinimalPressureDescription(FIFTH_DESCRIPTION);
             }
 
             if(isBetween(windDegree, 51, 100)) {     // Est / Nord Est
-                summerSeason.choiceSentences(2);
+                windDirection  = summerDescription.getMinimalPressureDescription(SECOND_DESCRIPTION);
             }
 
             if(isBetween(windDegree, 101, 190)) {    // Sud / Sud Est
-                summerSeason.choiceSentences(3);
+                windDirection  = summerDescription.getMinimalPressureDescription(THIRD_DESCRIPTION);
             }
 
             if(isBetween(windDegree, 191, 250)) {
-                summerSeason.choiceSentences(4);
+                windDirection  = summerDescription.getMinimalPressureDescription(FOURTH_DESCRIPTION);
             }
 
             if(isBetween(windDegree, 251, 345)) {
-                summerSeason.choiceSentences(5);
+                windDirection  = summerDescription.getMinimalPressureDescription(FIFTH_DESCRIPTION);
             }
         }
+        
+        if(MIN_STEP_PRESSURE_VALUE < pressure && pressure <= MIDDLE_STEP_PRESSURE_VALUE) {
+            
+        }
+
         return windDirection;
     }
 
     private static boolean isBetween(double windDegree, int lower, int upper) {
-        return windDegree >= lower && windDegree <= upper;
+        Boolean autorisation = false;
+        if(windDegree >= lower && windDegree <= upper) {
+            autorisation = true;
+        }
+        return autorisation;
 
 
     }
