@@ -23,7 +23,6 @@ public class Controller {
         ApiDataRequest dataRequest = new ApiDataRequest(this.cityName);
     }
 
-
     public void sendData (
             double  temp,
             double  tempMax,
@@ -34,8 +33,8 @@ public class Controller {
             double degree
     )
     {
-        WindDirection test = new WindDirection();
-        System.out.println(test.conversion(degree, pressure));
+        WindDirection direction = new WindDirection();
+        System.out.println(direction.findWindDirection(degree));
 
         Group root = new Group();
         Scene scene = new Scene(root, 500, 500);
