@@ -1,4 +1,4 @@
-package fr.morpheus.weathorapplication.view.skyDesription;
+package fr.morpheus.weathorapplication.model.windAngleDirection;
 
 public class WindDirection {
     public WindDirection() {}

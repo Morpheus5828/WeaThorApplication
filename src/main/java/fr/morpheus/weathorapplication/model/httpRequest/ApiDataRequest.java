@@ -1,4 +1,4 @@
-package fr.morpheus.weathorapplication.controller;
+package fr.morpheus.weathorapplication.model.httpRequest;
 
 import fr.morpheus.weathorapplication.model.DataExtraction;
 import javafx.scene.control.TextField;

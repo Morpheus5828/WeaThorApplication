@@ -1,6 +1,7 @@
 package fr.morpheus.weathorapplication.controller;
 
-import fr.morpheus.weathorapplication.view.skyDesription.WindDirection;
+import fr.morpheus.weathorapplication.model.httpRequest.ApiDataRequest;
+import fr.morpheus.weathorapplication.model.windAngleDirection.WindDirection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
@@ -34,8 +35,7 @@ public class Controller {
     )
     {
         WindDirection direction = new WindDirection();
-        System.out.println(direction.findWindDirection(degree));
-
+        String windDirection = direction.findWindDirection(degree);
         Group root = new Group();
         Scene scene = new Scene(root, 500, 500);
         Stage windows = new Stage();
@@ -44,13 +44,11 @@ public class Controller {
                 "Temperature : " + temp + " °C" +"\n" +
                 "Min : " + tempMin + " °C" + " Max : " + tempMax + " °C" +"\n" +
                 "Humidity : " + humidity + " %" + "\n" +
-                "The wind speed is " + speed + "km/h"
-
-                //
+                "The wind speed is " + speed + " km/h from : " + windDirection
         );
 
 
-        textResult.setX(200);
+        textResult.setX(100);
         textResult.setY(200);
 
         root.getChildren().add(textResult);

@@ -8,5 +8,7 @@ module fr.morpheus.weathorapplication {
     exports fr.morpheus.weathorapplication;
     exports fr.morpheus.weathorapplication.controller;
     opens fr.morpheus.weathorapplication.controller to javafx.fxml;
+    exports fr.morpheus.weathorapplication.model.httpRequest;
+    opens fr.morpheus.weathorapplication.model.httpRequest to javafx.fxml;
 
 }

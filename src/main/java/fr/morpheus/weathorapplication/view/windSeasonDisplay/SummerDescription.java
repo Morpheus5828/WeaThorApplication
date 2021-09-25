@@ -1,4 +1,4 @@
-package fr.morpheus.weathorapplication.view.skyDesription;
+package fr.morpheus.weathorapplication.view.windSeasonDisplay;
 
 public class SummerDescription {
     private String skyDescription = "";
