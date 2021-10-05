@@ -1,6 +1,6 @@
 package fr.morpheus.weathorapplication.controller;
 
-import fr.morpheus.weathorapplication.model.httpRequest.ApiDataRequest;
+import fr.morpheus.weathorapplication.controller.httpRequest.ApiDataRequest;
 import fr.morpheus.weathorapplication.model.windAngleDirection.WindDirection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

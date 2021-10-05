@@ -5,6 +5,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.net.URI;
+import java.net.http.HttpClient;
+
 public class WeaThor extends Application {
     @Override
     public void start(Stage stage)  {
