@@ -11,8 +11,9 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class ApiDataRequest {
-    private String cityName;
+    private final String cityName;
     private static final int REQUEST_SUCCESSFUL = 200;
+    private int statusCode;
 
     public ApiDataRequest(TextField cityName) {
         this.cityName = cityName.getText();
@@ -32,6 +33,9 @@ public class ApiDataRequest {
     private void testingForDataExtraction(TextField cityName, HttpClient client, HttpRequest request) {
         try {
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+            statusCode = response.statusCode();
+
             if(response.statusCode() == REQUEST_SUCCESSFUL) {
                new DataExtraction(response.body());
 
@@ -47,4 +51,8 @@ public class ApiDataRequest {
     public String convertSpaceToWebSpace() {
        return this.cityName.replace( " ","%20" );
    }
+
+    public int getStatusCode() {
+        return this.statusCode;
+    }
 }

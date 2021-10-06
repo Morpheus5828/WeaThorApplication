@@ -21,7 +21,7 @@ public class Controller {
 
 
     public void sendCityName(ActionEvent actionEvent) throws IOException {
-        ApiDataRequest dataRequest = new ApiDataRequest(this.cityName);
+        new ApiDataRequest(this.cityName);
     }
 
     public void sendData (
@@ -34,8 +34,8 @@ public class Controller {
             double degree
     )
     {
-        WindDirection direction = new WindDirection();
-        String windDirection = direction.findWindDirection(degree);
+        WindDirection direction = new WindDirection(degree);
+
         Group root = new Group();
         Scene scene = new Scene(root, 500, 500);
         Stage windows = new Stage();
@@ -44,7 +44,7 @@ public class Controller {
                 "Temperature : " + temp + " °C" +"\n" +
                 "Min : " + tempMin + " °C" + " Max : " + tempMax + " °C" +"\n" +
                 "Humidity : " + humidity + " %" + "\n" +
-                "The wind speed is " + speed + " km/h from : " + windDirection
+                "The wind speed is " + speed + " km/h from : " + direction.getWindStringDegree()
         );
 
 

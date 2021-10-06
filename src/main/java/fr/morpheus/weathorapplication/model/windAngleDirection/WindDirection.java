@@ -1,52 +1,57 @@
 package fr.morpheus.weathorapplication.model.windAngleDirection;
 
 public class WindDirection {
-    public WindDirection() {}
+    private final double windValueDegree;
+    private String windStringDegree = "";
 
-    public String findWindDirection(double windDegree) {
-        String windDirection = "Error";
-            if(isBetween(windDegree, 0, 23))
-                windDirection  = "North";
+    public WindDirection(double windDegreeValue) {
+        this.windValueDegree = windDegreeValue;
 
-
-            if(isBetween(windDegree, 23, 68))
-                windDirection  = "North / East";
+        if(windDegreeValuesIsBetween(338, 23))
+            this.windStringDegree  = "North";
 
 
-            if(isBetween(windDegree, 68, 113))
-                windDirection  = "East";
+        if(windDegreeValuesIsBetween(23, 68))
+            this.windStringDegree  = "North / East";
 
 
-            if(isBetween(windDegree, 113, 158))
-                windDirection  = "South / East";
+        if(windDegreeValuesIsBetween(68, 113))
+            this.windStringDegree  = "East";
 
 
-            if(isBetween(windDegree, 158, 203))
-                windDirection  = "South";
+        if(windDegreeValuesIsBetween(113, 158))
+            this.windStringDegree  = "South / East";
 
 
-            if(isBetween(windDegree, 203, 248))
-                windDirection = "South / West";
+        if(windDegreeValuesIsBetween(158, 203))
+            this.windStringDegree  = "South";
 
 
-            if(isBetween(windDegree, 248, 293))
-                windDirection = "West";
+        if(windDegreeValuesIsBetween(203, 248))
+            this.windStringDegree = "South / West";
 
 
-            if(isBetween(windDegree, 293, 338))
-                windDirection = "North / West";
+        if(windDegreeValuesIsBetween(248, 293))
+            this.windStringDegree = "West";
 
-            if(isBetween(windDegree, 338, 360))
-                windDirection = "North";
 
-        return windDirection;
+        if(windDegreeValuesIsBetween(293, 338))
+            this.windStringDegree = "North / West";
+
+        if(windDegreeValuesIsBetween(338, 360))
+            this.windStringDegree = "North";
     }
 
-    private static boolean isBetween(double windDegree, double lower, double upper) {
-        Boolean autorisation = false;
-        if(windDegree >= lower && windDegree < upper) {
-            autorisation = true;
-        }
-        return autorisation;
+
+
+    private boolean windDegreeValuesIsBetween(double lower, double upper) {
+        Boolean isBeetween = false;
+        if(windValueDegree >= lower && windValueDegree < upper)
+            isBeetween = true;
+        return isBeetween;
+    }
+
+    public String getWindStringDegree() {
+        return this.windStringDegree;
     }
 }
