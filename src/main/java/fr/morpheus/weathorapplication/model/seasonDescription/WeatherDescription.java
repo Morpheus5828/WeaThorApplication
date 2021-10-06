@@ -8,6 +8,8 @@ public class WeatherDescription {
     public WeatherDescription() {
         DateFormat format = new SimpleDateFormat("yyyy-MM-dd : hh:mm:ss a");
         Date actualDate = new Date();
-        System.out.println(format.format(actualDate));
+
+
     }
+
 }

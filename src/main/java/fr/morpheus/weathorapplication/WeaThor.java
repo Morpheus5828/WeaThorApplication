@@ -1,5 +1,7 @@
 package fr.morpheus.weathorapplication;
 
+import fr.morpheus.weathorapplication.model.seasonDescription.WeatherDescription;
+import fr.morpheus.weathorapplication.model.windDirectionModification.WindDirection;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

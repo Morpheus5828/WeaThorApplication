@@ -1,6 +1,6 @@
 package fr.morpheus.weathorapplication.controller.httpRequest;
 
-import fr.morpheus.weathorapplication.model.DataExtraction;
+import fr.morpheus.weathorapplication.model.DataManipulation.DataExtraction;
 import fr.morpheus.weathorapplication.view.errorDisplay.ErrorDisplay;
 import javafx.scene.control.TextField;
 

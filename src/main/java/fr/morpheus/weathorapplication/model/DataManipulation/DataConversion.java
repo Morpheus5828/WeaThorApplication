@@ -1,4 +1,4 @@
-package fr.morpheus.weathorapplication.model;
+package fr.morpheus.weathorapplication.model.DataManipulation;
 
 import fr.morpheus.weathorapplication.controller.Controller;
 
