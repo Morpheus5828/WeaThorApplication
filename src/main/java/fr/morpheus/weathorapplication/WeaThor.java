@@ -14,11 +14,13 @@ public class WeaThor extends Application {
     @Override
     public void start(Stage stage)  {
         try {
+            WeatherDescription test = new WeatherDescription();
+
             FXMLLoader fxmlLoader = new FXMLLoader(WeaThor.class.getResource("layout.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 500, 500);
             stage.setTitle("WeaThor");
             stage.setScene(scene);
-            stage.show();
+            //stage.show();
         } catch (Exception e) {
             e.printStackTrace();
         }
