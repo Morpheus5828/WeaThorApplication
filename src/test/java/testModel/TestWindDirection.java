@@ -16,7 +16,10 @@ public class TestWindDirection {
 
     @Test
     public void windDirectionTest() {
-        assertThat(wind.getWindStringDegree()).isEqualTo("North");
+        String a = wind.getWindStringDegree();
+        String b = "Noth";
+
+        a.equals(b);
 
 
     }
