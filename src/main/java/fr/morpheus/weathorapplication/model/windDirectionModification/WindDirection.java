@@ -36,11 +36,9 @@ public class WindDirection {
     }
 
     private boolean windDegreeValuesIsBetween(double lower, double upper) {
-        Boolean isBetween = false;
-        if(windValueDegree >= lower && windValueDegree < upper) {
-            isBetween = true;
-        }
-        return isBetween;
+        if(windValueDegree >= lower && windValueDegree < upper)
+            return true;
+        return false;
     }
 
     public String getWindStringDegree() {
