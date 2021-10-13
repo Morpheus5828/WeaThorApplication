@@ -1,6 +1,7 @@
 package fr.morpheus.weathorapplication.controller;
 
 import fr.morpheus.weathorapplication.controller.httpRequest.ApiDataRequest;
+import fr.morpheus.weathorapplication.model.seasonDescription.WeatherDescription;
 import fr.morpheus.weathorapplication.model.windDirectionModification.WindDirection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -35,6 +36,8 @@ public class Controller {
     )
     {
         WindDirection direction = new WindDirection(degree);
+        //WeatherDescription test = new WeatherDescription();
+        //test.getDescription();
 
         Group root = new Group();
         Scene scene = new Scene(root, 500, 500);

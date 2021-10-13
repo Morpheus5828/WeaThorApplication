@@ -18,58 +18,39 @@ public class WeatherDescription {
     private static int firstAutumnMonth = 9;
     private static int lastAutumnMonth = 12; //December
 
-    public WeatherDescription() {
+    private double pressureValue;
+    private String windDirectionValue;
 
+    public WeatherDescription(double pressure , String windDirection) {
+        this.pressureValue = pressure;
+        this.windDirectionValue = windDirection;
     }
 
+    public WeatherDescription() {}
 
-    public void chooseSeasonDescription() {
-        Calendar date = Calendar.getInstance();
+    public boolean getDescription(Calendar date) {
+        date = Calendar.getInstance();
         int actualMonth = date.get(Calendar.MONTH);
         int actualDay = date.get(Calendar.DAY_OF_MONTH);
 
         System.out.println(actualDay);
         System.out.println(actualMonth);
 
-        if(isInWinterPeriod(actualMonth, actualDay)) {
-            System.out.println("winter is coming");
-            // instance creation to have winter season description (coming soon)
-        }
-        if(isInSpringPeriod(actualMonth, actualDay)) {
-            System.out.println("Spring fuck");
-        }
-
         if(isInAutumnPeriod(actualMonth, actualDay)) {
-            System.out.println("c'est l'automne");
+            System.out.println("winter is coming");
+            return true;
+            // instance creation to have winter season description (coming soon)
+
         }
-        else {
-            System.out.println("marche pas trolleur");
+        return false;
+    }
+
+    public boolean isInAutumnPeriod(double actualMonth, double actualDay) {
+        if((firstAutumnMonth >= actualMonth && firstSeasonDay >= actualDay) && (actualDay <= lastSeasonDay && actualMonth <= lastAutumnMonth)) {
+            return true;
         }
-
-      //  if (localDate.getMonthValue() >= 10  || localDate.getDayOfMonth())
-    }
-
-    private boolean isInWinterPeriod(int actualMonth, int actualDay) {
-        if(actualMonth >= firstWinterMonth && actualDay >= firstSeasonDay && actualMonth <= lastWinterMonth && actualDay <= lastSeasonDay)
-            return true;
         return false;
     }
 
-    private boolean isInSpringPeriod(int actualMonth, int actualDay) {
-        if(actualMonth >= firstSpringMonth && actualDay >= firstSeasonDay && actualMonth <= lastSpringMonth && actualDay <= lastSeasonDay)
-            return true;
-        return false;
-    }
 
-    private boolean isInSummerPeriod(int actualMonth, int actualDay) {
-        if(actualMonth >= firstSummerMonth && actualDay >= firstSeasonDay && actualMonth <= lastSummerMonth && actualDay <= lastSeasonDay)
-            return true;
-        return false;
-    }
-
-    private boolean isInAutumnPeriod(int actualMonth, int actualDay) {
-        if(actualMonth >= firstAutumnMonth && actualDay >= firstSeasonDay && actualMonth <= lastAutumnMonth && actualDay <= lastSeasonDay)
-            return true;
-        return false;
-    }
 }
