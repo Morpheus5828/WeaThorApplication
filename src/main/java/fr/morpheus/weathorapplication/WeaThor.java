@@ -15,8 +15,7 @@ public class WeaThor extends Application {
         try {
             WeatherDescription test = new WeatherDescription(10, "");
             Calendar calendar = Calendar.getInstance();
-            test.getDescription(calendar);
-            System.out.println(calendar);
+            System.out.println(test.getDescription(calendar));
 
 
             FXMLLoader fxmlLoader = new FXMLLoader(WeaThor.class.getResource("layout.fxml"));

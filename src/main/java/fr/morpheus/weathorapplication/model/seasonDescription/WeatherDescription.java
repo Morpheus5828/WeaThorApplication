@@ -1,22 +1,9 @@
 package fr.morpheus.weathorapplication.model.seasonDescription;
 
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Date;
 
 public class WeatherDescription {
-    private static int firstSeasonDay = 21;
-    private static int lastSeasonDay = 20;
-
-    private static int firstWinterMonth = 10; // October
-    private static int lastWinterMonth = 3; // March
-    private static int firstSpringMonth = 3;
-    private static int lastSpringMonth = 6;  //June
-    private static int firstSummerMonth = 6;
-    private static int lastSummerMonth = 9; //September
-    private static int firstAutumnMonth = 9;
-    private static int lastAutumnMonth = 12; //December
 
     private double pressureValue;
     private String windDirectionValue;
@@ -29,7 +16,6 @@ public class WeatherDescription {
     public WeatherDescription() {}
 
     public boolean getDescription(Calendar date) {
-        date = Calendar.getInstance();
         int actualMonth = date.get(Calendar.MONTH);
         int actualDay = date.get(Calendar.DAY_OF_MONTH);
 
@@ -45,12 +31,54 @@ public class WeatherDescription {
         return false;
     }
 
-    public boolean isInAutumnPeriod(double actualMonth, double actualDay) {
-        if((firstAutumnMonth >= actualMonth && firstSeasonDay >= actualDay) && (actualDay <= lastSeasonDay && actualMonth <= lastAutumnMonth)) {
+    public boolean isInAutumnPeriod(double currentMonth, double currentDay) {
+        if(currentMonth == Calendar.SEPTEMBER && (21 >= currentDay || currentDay <= 31))
             return true;
-        }
+        if(currentMonth == Calendar.OCTOBER)
+            return true;
+        if(currentMonth == Calendar.NOVEMBER)
+            return true;
+        if(currentMonth == Calendar.DECEMBER && currentDay <= 20)
+            return true;
         return false;
     }
+
+    public boolean isInWinterPeriod(double currentMonth, double currentDay) {
+        if(currentMonth == Calendar.DECEMBER && (21 >= currentDay || currentDay <= 31))
+            return true;
+        if(currentMonth == Calendar.JANUARY)
+            return true;
+        if(currentMonth == Calendar.FEBRUARY)
+            return true;
+        if(currentMonth == Calendar.MARCH && currentDay <= 20)
+        return true;
+    return false;
+    }
+
+    public boolean isInSpringPeriod(double currentMonth, double currentDay) {
+        if(currentMonth == Calendar.MARCH && (21 >= currentDay || currentDay <= 31))
+            return true;
+        if(currentMonth == Calendar.APRIL)
+            return true;
+        if(currentMonth == Calendar.MAY)
+            return true;
+        if(currentMonth == Calendar.JUNE && currentDay <= 20)
+            return true;
+        return false;
+    }
+
+    public boolean isInSummerPeriod(double currentMonth, double currentDay) {
+        if(currentMonth == Calendar.JUNE && (21 >= currentDay || currentDay <= 30))
+            return true;
+        if(currentMonth == Calendar.JULY)
+            return true;
+        if(currentMonth == Calendar.AUGUST)
+            return true;
+        if(currentMonth == Calendar.SEPTEMBER && currentDay <= 20)
+            return true;
+        return false;
+    }
+
 
 
 }
