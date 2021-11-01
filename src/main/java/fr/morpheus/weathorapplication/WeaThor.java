@@ -15,14 +15,14 @@ public class WeaThor extends Application {
         try {
             WeatherDescription test = new WeatherDescription(10, "");
             Calendar calendar = Calendar.getInstance();
-            System.out.println(test.getDescription(calendar));
+            //System.out.println(test.getDescription(calendar));
 
 
             FXMLLoader fxmlLoader = new FXMLLoader(WeaThor.class.getResource("layout.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 500, 500);
             stage.setTitle("WeaThor");
             stage.setScene(scene);
-            //stage.show();
+            stage.show();
         } catch (Exception e) {
             e.printStackTrace();
         }

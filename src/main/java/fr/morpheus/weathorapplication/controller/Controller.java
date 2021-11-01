@@ -36,8 +36,6 @@ public class Controller {
     )
     {
         WindDirection direction = new WindDirection(degree);
-        //WeatherDescription test = new WeatherDescription();
-        //test.getDescription();
 
         Group root = new Group();
         Scene scene = new Scene(root, 500, 500);

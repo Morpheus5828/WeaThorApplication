@@ -32,7 +32,7 @@ public class WeatherDescription {
     }
 
     public boolean isInAutumnPeriod(double currentMonth, double currentDay) {
-        if(currentMonth == Calendar.SEPTEMBER && (21 >= currentDay || currentDay <= 31))
+        if(currentMonth == Calendar.SEPTEMBER && 21 <= currentDay)
             return true;
         if(currentMonth == Calendar.OCTOBER)
             return true;
@@ -44,7 +44,7 @@ public class WeatherDescription {
     }
 
     public boolean isInWinterPeriod(double currentMonth, double currentDay) {
-        if(currentMonth == Calendar.DECEMBER && (21 >= currentDay || currentDay <= 31))
+        if(currentMonth == Calendar.DECEMBER && 21 <= currentDay)
             return true;
         if(currentMonth == Calendar.JANUARY)
             return true;
@@ -56,7 +56,7 @@ public class WeatherDescription {
     }
 
     public boolean isInSpringPeriod(double currentMonth, double currentDay) {
-        if(currentMonth == Calendar.MARCH && (21 >= currentDay || currentDay <= 31))
+        if(currentMonth == Calendar.MARCH && 21 <= currentDay)
             return true;
         if(currentMonth == Calendar.APRIL)
             return true;
@@ -68,7 +68,7 @@ public class WeatherDescription {
     }
 
     public boolean isInSummerPeriod(double currentMonth, double currentDay) {
-        if(currentMonth == Calendar.JUNE && (21 >= currentDay || currentDay <= 30))
+        if(currentMonth == Calendar.JUNE && 21 <= currentDay)
             return true;
         if(currentMonth == Calendar.JULY)
             return true;
