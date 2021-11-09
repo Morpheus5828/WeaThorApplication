@@ -15,8 +15,9 @@ public class SummerTab {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * FROM summerTab");
 
-            while(resultSet.next()) {
-                System.out.println(resultSet.getString("pressure"));
+            if(resultSet.next()) {
+                String table = resultSet.getString("pressure");
+                System.out.println(table);
             }
 
         } catch (Exception e) {
