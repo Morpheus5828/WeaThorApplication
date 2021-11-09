@@ -1,6 +1,6 @@
 package testModel;
 
-import fr.morpheus.weathorapplication.model.seasonDescription.WeatherDescription;
+import fr.morpheus.weathorapplication.model.weatherDescription.WeatherDescription;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

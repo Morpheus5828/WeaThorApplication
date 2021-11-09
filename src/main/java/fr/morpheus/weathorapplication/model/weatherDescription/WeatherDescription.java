@@ -1,7 +1,6 @@
-package fr.morpheus.weathorapplication.model.seasonDescription;
+package fr.morpheus.weathorapplication.model.weatherDescription;
 
 import java.util.Calendar;
-import java.util.Date;
 
 public class WeatherDescription {
 
