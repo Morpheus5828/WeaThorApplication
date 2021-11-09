@@ -6,16 +6,14 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class SummerTab {
-    private static final byte numberOfRow = 4;
-    private static final byte numberOfColumn = 4;
 
     public SummerTab() {}
 
-    public void getSummerTextDescription() {
+    public void  getSummerTextDescription() {
         try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/data", "root", "marseille");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/tableBase", "root", "marseille");
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("select * from summerTab");
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM summerTab");
 
             while(resultSet.next()) {
                 System.out.println(resultSet.getString("pressure"));
