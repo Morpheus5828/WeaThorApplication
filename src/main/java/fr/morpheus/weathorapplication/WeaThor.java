@@ -1,7 +1,7 @@
 package fr.morpheus.weathorapplication;
 
 import fr.morpheus.weathorapplication.model.weatherDescription.WeatherDescription;
-import fr.morpheus.weathorapplication.model.weatherDescription.seasonTabs.SummerTab;
+import fr.morpheus.weathorapplication.model.weatherDescription.seasonTabs.SummerTabRequest;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -15,7 +15,7 @@ public class WeaThor extends Application {
         try {
             WeatherDescription test = new WeatherDescription(10, "");
             Calendar calendar = Calendar.getInstance();
-            SummerTab test1 = new SummerTab();
+            SummerTabRequest test1 = new SummerTabRequest();
             test1.getSummerTextDescription();
 
 
@@ -24,7 +24,7 @@ public class WeaThor extends Application {
             Scene scene = new Scene(fxmlLoader.load(), 500, 500);
             stage.setTitle("WeaThor");
             stage.setScene(scene);
-            //stage.show();
+           // stage.show();
         } catch (Exception e) {
             e.printStackTrace();
         }
